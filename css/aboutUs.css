@@ -1,0 +1,115 @@
+/*aboutUs.css
+Purpose: Give stylistic aspects to specifically the aboutUs page. Make the aboutUs page more appealing.
+Version: addedHeaderComments  Date: 5/14/2021
+Author(s): Andy Nguyen, Mike Nguyen, Dat Nguyen 
+Dependencies: CSS3
+
+*/
+
+
+/* Universal selector of all elements.*/
+* {
+  box-sizing: border-box;
+}
+
+#site_content {
+  width: 1027px;
+  overflow: hidden;
+  padding: 0 0 10px 0;
+}
+
+#content {
+  width: 90%;
+  margin-top: 20px;
+  padding: 10px;
+  margin-left: 25px;
+}
+
+#banner {
+  background: transparent url(../assets/aboutUs/banner.jpg) no-repeat center;
+  width: 95%;
+  height: 570px;
+  border: 6px solid;
+}
+
+figcaption {
+  font-size: small;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Content of page. */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input {
+  width: 380px;
+}
+
+/* User input section */
+input,
+textarea {
+  margin: 10px;
+  border-radius: 1px;
+  border-width: 2px;
+  border-color: silver;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #009FBC;
+  border: none;
+  color: rgb(231, 224, 224);
+  text-align: center;
+  font-size: 15px;
+  padding: 6px;
+  width: 90px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-color: lightslategray;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#footer {
+  height: 120px;
+}

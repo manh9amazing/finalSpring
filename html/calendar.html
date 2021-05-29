@@ -1,0 +1,113 @@
+<!--Calendar.html-->
+<!--Purpose: Create a calendar for the user to input data.-->
+<!--Version: addedHeaderComments  Date: 5/14/2021-->
+<!--Author(s): Andy Nguyen, Mike Nguyen, Dat Nguyen -->
+<!--Dependencies: HTML5, CSS3, Javascript-->
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!--Title of page and description being a budget website. Content set to html default.-->
+    <title>Efficient Money</title>
+    <meta name="description" content="a budget planning website" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+
+    <!-- FIREBASE IMPLEMENTATION WITHOUT USING SPA PATTERN - REMEMBER TO INCLUDE THESE LINES IN EVERY PAGE USING FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script> -->
+    <script src="../js/firebaseConfig.js"></script>
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!--Link to css for page and calendar. Font family is connected for font.-->
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link href="../css/calendar.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Prata" rel="stylesheet">
+
+    <!--Connection to about us javascript for functionality.-->
+    <script src="../js/accHandle.js"></script>
+    <script src="../js/calendar.js"></script>
+    <script src="../js/exElement.js"></script>
+
+</head>
+
+<body>
+    <!--Div containers for main logo text.-->
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="acc-display">
+                    <div id="acc-name">
+                        <script>
+                            var name = localStorage.getItem("name");
+                            var accName = document.getElementById("acc-name");
+                            accName.innerHTML = "Hello, " + name + "&nbsp&nbsp";
+                        </script>
+                    </div>
+                    <button id="logout-btn"></button>      
+                </div>
+                <div id="secret-tab"></div>
+                <div id="logo_text">
+                    <h1><a href="index.html">Efficient<span class="logo_colour">Money</span></a></h1>
+                    <h2>Need help with finances? Let's get organized.</h2>
+                </div>
+            </div>
+            <div class="tabbed">
+                <ul>
+                    <!--Navigation bar. Active on current page.-->
+                    <li onclick="window.location='./aboutUs.html'">About Us</li>
+                    <li onclick="window.location='./wishList.html'">Wish List</li>
+                    <!-- <li onclick="window.location='./dataTab.html'">Data Tables</li>  -->
+                    <li onclick="window.location='./calendar.html'" class="active">Calendar</li>
+                    <li onclick="window.location='./articles.html'">Articles</li>
+                    <li onclick="window.location='./budget.html'">Budget Planning</li>
+                    <li onclick="window.location='./index.html'">Home</li>
+                </ul>
+            </div>
+        </div>
+        <!--Div for sidebar and content for sidebar.-->
+        <div id="content_header "></div>
+        <div id="site_content">
+            <div id="banner"></div>
+            <div id="sidebar_container">
+                <div class="sidebar">
+                    <div class="sidebar_item">
+                        <h3>You have set plans for these days:</h3>
+                        <p id = "plans-list"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="cal-wrap">
+                    <!-- [PERIOD SELECTOR] -->
+                    <div id="cal-date">
+                        <select id="cal-mth"></select>
+                        <select id="cal-yr"></select>
+                        <input id="cal-set" type="button" value="SET"/>
+                    </div>
+            
+                    <!-- [CALENDAR] -->
+                    <div id="cal-container"></div>
+            
+                    <!-- [EVENT] -->
+                    <div id="cal-event"></div>
+                </div>
+            </div>
+        </div>
+        <!--Navigation bar footer.-->
+        <div id="content_footer "></div>
+        <div id="footer">
+            <p><a href="index.html">Home</a> | <a href="budget.html">Budget Planning</a> | <a href="articles.html">Articles</a> | <a href="calendar.html">Calendar</a> | <a href="wishList.html">Wish List</a> |  <a href="aboutUs.html">About Us</a></p>
+            <p>Drexel CI Lab Project</p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

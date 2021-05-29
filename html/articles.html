@@ -1,0 +1,140 @@
+<!--articles.html-->
+<!--Purpose: Present different article sections for the user to get to different websites. Present different resources for learning more information.-->
+<!--Version: addedHeaderComments  Date: 5/14/2021-->
+<!--Author(s): Andy Nguyen, Mike Nguyen -->
+<!--Dependencies: HTML5, CSS3, Javascript-->
+
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!--Title of page. Discription being a budgeting page. Default settings for content.-->
+    <title>Efficient Money</title>
+    <meta name="description" content="a budget planning website" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+
+    <!-- FIREBASE IMPLEMENTATION WITHOUT USING SPA PATTERN - REMEMBER TO INCLUDE THESE LINES IN EVERY PAGE USING FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script> -->
+    <script src="../js/firebaseConfig.js"></script>
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!--Link to css and font family.-->
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/article.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Prata" rel="stylesheet">
+
+    <!--Connection to about us javascript for functionality.-->
+    <script src="../js/accHandle.js"></script>
+    <script src="../js/article.js"></script>
+    <script src="../js/exElement.js"></script>
+</head>
+
+<body>
+    <!--Divs for the logo.-->
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="acc-display">
+                    <div id="acc-name">
+                        <script>
+                            //Getting the user's name for top right login name.
+                            var name = localStorage.getItem("name");
+                            var accName = document.getElementById("acc-name");
+                            accName.innerHTML = "Hello, " + name + "&nbsp&nbsp";
+                        </script>
+                    </div>
+                    <button id="logout-btn"></button>      
+                </div>
+                <div id="secret-tab"></div>
+                <div id="logo_text">
+                    <h1><a href="index.html">Efficient<span class="logo_colour">Money</span></a></h1>
+                    <h2>Need help with finances? Let's get organized.</h2>
+                </div>
+            </div>
+            <div class="tabbed">
+                <ul>
+                    <!--Navigation bar. The page that is active stands out for the user to know where they are.-->
+                    <li onclick="window.location='./aboutUs.html'">About Us</li>
+                    <li onclick="window.location='./wishList.html'">Wish List</li>
+                    <!-- <li onclick="window.location='./dataTab.html'">Data Tables</li>  -->
+                    <li onclick="window.location='./calendar.html'">Calendar</li>
+                    <li onclick="window.location='./articles.html'" class="active">Articles</li>
+                    <li onclick="window.location='./budget.html'">Budget Planning</li> 
+                    <li onclick="window.location='./index.html'">Home</li>
+                </ul>
+            </div>
+        </div>
+        <!--Divs and content of sidebar.-->
+        <div id="content_header "></div>
+        <div id="site_content">
+            <div id="banner"></div>
+            <div class="intro">Here are our handpicked useful sources to manage your budget wisely. Read and become a master of budgeting.</div>
+            <!--Content of the articles page. Links to different articles and short summary of each we recommend.-->
+            <div id="content">
+                <h2>Pocket Sense </h2> 
+                    <div id="imgshadow">
+                        <img src="../assets/article/Nerdwallet.jpg" alt="Image not found" onerror="this.src='../assets/article/blank.png';" class = "smallImg"> 
+                        <p class="z">
+                            If you are super new to this whole "budgeting thing", get started with this!
+                            <!--Javascript interaction for hidding and showing information.-->
+                            <b class="show" onclick="domainExpansion(this)">&hellip;</b>
+                            <span class="hide" onclick="evtHide(this)"> 
+                                What makes a good personal budget? What are you looking for and what are your goals in the end?<br> 
+                                (Photo by <a href="https://unsplash.com/@lgnwvr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Logan Weaver</a> 
+                                on Unsplash)<br>
+                                <!--Clickable links for each article.-->
+                                <a class="a-link" href="https://pocketsense.com/elements-financial-budget-7747464.html">Article link</a>
+                            </span>
+                        </p>
+                    </div>
+                <h2>Nerd Wallet</h2>
+                    <div id="imgshadow">
+                        <img src="../assets/article/PocketSense2.jpg" alt="Image not found" onerror="this.src='../assets/article/blank.png';" class = "smallImg">
+                        <p class="z">
+                            If you just want to keep things simple in your financial life! 
+                            <!--Javascript used for hidding and showing more information.-->
+                            <b class="show" onclick="domainExpansion(this)">&hellip;</b>
+                            <span class="hide" onclick="evtHide(this)">
+                                Told from the math wizards at Nerd Wallet, find out about the 50/20/30 to exponentally grow.<br>
+                                (Photo by <a href="https://unsplash.com/@benchaccounting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bench Accounting</a> 
+                                on Unsplash)<br>
+                                <a class="a-link" href="https://www.nerdwallet.com/article/finance/how-to-budget">Article link</a>
+                            </span>
+                        </p>
+                    </div>
+                <h2>CNBC</h2>
+                    <div id="imgshadow">
+                        <img src="../assets/article/CNBC2.jpg" alt="Image not found" onerror="this.src='../assets/article/blank.png';" class = "smallImg">
+                        <p class="z">
+                            If you need some new was to shape up your budget!  
+                            <!--Javascript used for hidding and showing more information.-->
+                            <b class="show" onclick="domainExpansion(this)">&hellip;</b>
+                            <span class="hide" onclick="evtHide(this)">
+                                CNBC and other news channels might have surprising information to keep people in the know. Learn more on how to grow your wealth with this page!<br>
+                                (Photo by <a href="https://unsplash.com/@micheile?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Micheile Henderson</a> 
+                                on Unsplash)<br>
+                                <a class="a-link" href="https://www.cnbc.com/guide/personal-finance-101-the-complete-guide-to-managing-your-money/#introduction">Article link</a>
+                            </span>
+                        </p>
+                    </div>
+            </div>
+        </div>
+        <!--Footer navigation bar for user.-->
+        <div id="content_footer "></div>
+        <div id="footer">
+            <p><a href="index.html">Home</a> | <a href="budget.html">Budget Planning</a> | <a href="articles.html">Articles</a> | <a href="calendar.html">Calendar</a> | <a href="wishList.html">Wish List</a> |  <a href="aboutUs.html">About Us</a></p>
+            <p>Drexel CI Lab Project</p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

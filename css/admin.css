@@ -1,0 +1,99 @@
+/*admin.css
+Purpose: Give stylistic aspects to specifically the admin page. Make the admin page more appealing.
+Version: addedHeaderComments  Date: 5/14/2021
+Author(s): Mike Nguyen
+Dependencies: CSS3
+
+*/
+
+#banner {
+  background: transparent url(../assets/admin/banner.png) no-repeat;
+  width: 760px;
+  height: 394px;
+  border: 10px solid #ddd;
+}
+
+.intro {
+  font-style: oblique;
+}
+
+#content {
+  margin-top: 12px;
+}
+
+.feedback-container {
+  margin-bottom: 12px;
+  width: 780px;
+  border: 2px solid;
+  padding: 10px;
+}
+
+h1 {
+  margin-bottom: 1px;
+  color: darkblue;
+  font-weight: bold;
+}
+
+h3 {
+  text-transform: none;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+a {
+  color: #0c08df;
+}
+
+.content-title {
+  font-weight: bold;
+}
+
+.finished {
+  color: rgb(33, 221, 33);
+}
+
+.unfinished {
+  color: red;
+}
+
+button {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid;
+  transition: color 0.5s;
+}
+
+button:hover {
+  color: #fff;
+  background: green;
+}
+
+button:disabled {
+  background: #c2c2c2;
+  pointer-events: none;
+}
+
+table {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+}

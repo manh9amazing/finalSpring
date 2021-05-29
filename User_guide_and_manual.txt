@@ -1,0 +1,49 @@
+How to start the system:
+
+Go to any web browser and input the link to the website. Link: https://manh9amazing.github.io/mvpWinter/html/index.html
+
+How to use different features of a system:
+
+Navigation bar:
+
+Navigation bars can send the user to anywhere they would want to visit. For instance, clicking the budget page sends the user to the budget page.
+
+Main page:
+
+Clicking on different rectangles and objects reveals more information through a pop up and or through a different section appearing.
+
+Budget page:
+
+Buttons for different savings plan and for inputting data and creating the different items being applied.
+
+inputting data from each category going from 1 being most important to whatever amount. Also, typing in different sections as well is allowed for the sections that have that option such as each item in the budget input. 
+
+Button that creates the pi, bar, and line chart based off user input.
+
+Article page:
+
+Each section inside of the articles page has an ellipsis (...) that when left clicked reveals more information. Additionally, more information reveals a link to the article site for the user to navigate through clicking on the link.
+
+Calendar page:
+Can set the future dates through clicking on each heading for the month day and year up to 2031.
+Can click on any day of the month to input the event scheduled for that day. 
+Has button for multiple days based off the same event.
+Text boxes to fill with information. The multiple days text box is only looking for a date. If the wrong input is given, an error message would popup.
+
+Data tables:
+Can click on any data table section to fill with user input.
+Data table gets updated based off user input and budget page.
+Can hover and click and the specific data can be highlighted.
+
+Wist list:
+Can click on input on form and fill in the form.
+Can click add item to store the wish list items to server.
+Can click on the cross to remove items.
+Data rendered on the screen get updated after adding, removing and loading page.
+
+AboutUs page:
+Text boxes that can be filled as a form. When the button send is pressed, send form to developers.
+Information that can be inspected to know more about the project.
+
+Bottom navigation bar:
+Can send the user to anyone of those pages listed. 

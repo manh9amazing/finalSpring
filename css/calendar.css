@@ -1,0 +1,147 @@
+/*calendar.css
+Purpose: Give stylistic aspects to specifically the calendar page. Make the calendar page more appealing.
+Version: addedHeaderComments  Date: 5/14/2021
+Author(s): Andy Nguyen, Mike Nguyen, Dat Nguyen 
+Dependencies: CSS3
+
+*/
+
+
+#banner {
+  background: transparent url(../assets/calendar/banner.jpg) no-repeat;
+  width: 800px;
+  height: 450px;
+  border: 10px solid #ddd;
+}
+
+/* [CONTAINER] */
+#cal-wrap {
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* [PERIOD SELECTOR] */
+#cal-date {
+  display: flex;
+}
+#cal-mth,
+#cal-yr,
+#cal-set {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: 0;
+  color: #fff;
+}
+#cal-mth,
+#cal-yr {
+  background: #696969;
+}
+#cal-set {
+  background: #696969;
+  border-top-right-radius: 12px;
+}
+
+/* [CALENDAR] */
+#calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Display of days in week.*/
+#calendar tr.head td {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  background: linear-gradient(to right, #03ecfc, #03a9fc);
+  padding: 15px;
+  text-align: center;
+}
+/* Day within Calendar.*/
+#calendar tr.day td {
+  border: 1px solid #ddd;
+  width: 14.28%;
+  padding: 15px 5px;
+  vertical-align: top;
+}
+#calendar tr.day td:hover {
+  background: #fff9e4;
+  cursor: pointer;
+}
+#calendar tr td.blank {
+  background: #f5f5f5;
+}
+#calendar .dd {
+  font-size: 1.2em;
+  color: #999;
+}
+#calendar .evt {
+  text-overflow: ellipsis;
+  width: 50px;
+  height: 16px;
+  margin-top: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  overflow: hidden;
+  color: #2f4f4f;
+}
+
+/* [ADD/EDIT EVENT] */
+#cal-event form {
+  padding: 15px;
+  margin-top: 20px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+}
+#cal-event h1 {
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+#evt-date {
+  color: #999;
+  margin: 10px 0;
+}
+#cal-event textarea {
+  /* display: block; */
+  box-sizing: padding-box;
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  resize: none;
+}
+#cal-event input[type="button"],
+#cal-event input[type="submit"] {
+  padding: 10px;
+  margin: 5px;
+  font-size: 1.2em;
+  border: 0;
+  background: #314755; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #26a0da,
+    #314755
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #26a0da,
+    #314755
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+#plans-list {
+  padding-left: 40px;
+}
+
+.hidden {
+  display: none;
+  /* need to remove display:block in #cal-event textarea first */
+}
+
+.hoverOpa:hover,
+#cal-mth:hover,
+#cal-yr:hover,
+#cal-set:hover {
+  opacity: 0.6;
+}

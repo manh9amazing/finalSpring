@@ -1,0 +1,451 @@
+/*index.css
+Purpose: Give the overall look of the page in terms of color pallet and location and font sizes of objects within the website.
+Version: addedHeaderComments  Date: 5/14/2021
+Author(s): Andy Nguyen, Mike Nguyen, Dat Nguyen, DatDo Nguyen
+Dependencies: CSS3
+
+*/
+
+
+/* sets the height of html to 100 percent.*/
+html {
+  height: 100%;
+}
+
+/* Universal selector to make all elements zero margins and zero padding in all browsers. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Body is font Lato and sans-serif as backup. Font size is related to font itself. Color of background. */
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 0.99em;
+  background: #fff;
+  color: #555;
+}
+/*Paragraph text padding and line-height to match font and page. */
+p {
+  padding: 0 0 20px 0;
+  line-height: 1.7em;
+}
+
+/*Image has no border. */
+img {
+  border: 0;
+}
+
+/*For headings, select specific fonts and spacing and color. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Prata", serif;
+  color: #362c20;
+  letter-spacing: 0em;
+  padding: 0 0 5px 0;
+}
+
+h1,
+h2,
+h3 {
+  font: normal 170% "century gothic", arial;
+  margin: 0 0 15px 0;
+  padding: 15px 0 5px 0;
+  color: #000;
+}
+
+h2 {
+  font-size: 160%;
+  padding: 9px 0 5px 0;
+  color: #009fbc;
+}
+
+h3 {
+  font-size: 140%;
+  padding: 5px 0 0 0;
+}
+
+h4,
+h6 {
+  color: #009fbc;
+  padding: 0 0 5px 0;
+  font: normal 110% arial;
+  text-transform: uppercase;
+}
+
+h5,
+h6 {
+  color: #888;
+  font: normal 95% arial;
+  letter-spacing: normal;
+  padding: 0 0 15px 0;
+}
+/*Hover over navigation bar.*/
+a,
+a:hover {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding: 10px 20px 0 20px;
+  border: 1px solid #e5e5db;
+  background: #fff;
+}
+
+ul {
+  margin: 2px 0 22px 17px;
+}
+
+ul li {
+  list-style-type: circle;
+  margin: 0 0 6px 0;
+  padding: 0 0 4px 5px;
+  line-height: 1.5em;
+}
+
+ol {
+  margin: 8px 0 22px 20px;
+}
+
+ol li {
+  margin: 0 0 11px 0;
+}
+
+.left {
+  float: left;
+  width: auto;
+  margin-right: 10px;
+}
+
+.right {
+  float: right;
+  width: auto;
+  margin-left: 10px;
+}
+
+.center {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+/*Each div and id are self explainatory. Each aspect collectively make up the site. */
+#main,
+#logo,
+#site_content,
+#footer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  background: #323534;
+  height: 178px;
+}
+
+#banner {
+  background: transparent url(../assets/home/banner.jpg) no-repeat;
+  width: 860px;
+  height: 180px;
+  border: 10px solid #ddd;
+}
+
+#logo {
+  width: 880px;
+  position: relative;
+  height: 140px;
+  background: transparent;
+}
+
+#logo #logo_text {
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+#logo h1,
+#logo h2 {
+  font: normal 300% "century gothic", arial, sans-serif;
+  border-bottom: 0;
+  text-transform: none;
+  margin: 0 0 0 9px;
+}
+
+#logo_text h1,
+#logo_text h1 a,
+#logo_text h1 a:hover {
+  padding: 22px 0 0 0;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+#logo_text h1 a .logo_colour {
+  color: #42e6f5;
+}
+
+#logo_text a:hover .logo_colour {
+  color: #fff;
+}
+
+#logo_text h2 {
+  font-size: 120%;
+  padding: 4px 0 0 0;
+  color: #999;
+}
+
+#site_content {
+  width: 880px;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  padding: 0 0 10px 0;
+}
+
+#sidebar_container {
+  float: right;
+  width: 224px;
+  border: solid 3px gray;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.sidebar li a.selected {
+  color: #444;
+}
+
+.sidebar ul {
+  margin: 0;
+}
+
+.sidebar_item h3 {
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.sidebar_item a {
+  text-decoration: underline;
+}
+
+.sidebar_item a:hover {
+  text-decoration: none;
+}
+
+#content {
+  text-align: left;
+  width: 620px;
+  padding: 0 0 0 5px;
+  float: left;
+}
+
+.indexContainer{
+  border: solid 3px silver;
+  margin-top:10px;
+  border-radius: 10px;
+  position:relative;
+  Top:-242px;
+
+}
+
+#content ul {
+  margin: 2px 0 22px 0px;
+}
+
+#content ul li,
+.sidebar ul li {
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 0 0 4px 25px;
+  line-height: 1.5em;
+}
+
+#footer {
+  width: 100%;
+  font-family: "trebuchet ms", sans-serif;
+  font-size: 100%;
+  height: 80px;
+  padding: 28px 0 5px 0;
+  text-align: center;
+  background: #3b3939;
+}
+
+#footer p {
+  line-height: 1.7em;
+  padding: 0 0 10px 0;
+}
+
+#footer a {
+  color: #42b6f5;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.tabbed {
+  width: 80%;
+  min-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 68px;
+  overflow: hidden;
+  transition: border 250ms ease;
+}
+/*Navigation bar css - Positioning */
+.tabbed ul {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  float: left;
+  padding-left: 190px;
+  list-style-type: none;
+}
+
+.tabbed ul * {
+  margin: 0px;
+  padding: 0px;
+}
+
+.tabbed ul li {
+  display: block;
+  float: right;
+  padding: 10px 24px 8px;
+  background-color: #fff;
+  margin-right: 46px;
+  /* z-index: 2; */
+  position: relative;
+  cursor: pointer;
+  color: #777;
+  text-transform: uppercase;
+  font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+  transition: all 250ms ease;
+}
+
+.tabbed ul li:before,
+.tabbed ul li:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 44px;
+  background-color: #fff;
+  transition: all 250ms ease;
+}
+
+.tabbed ul li:before {
+  right: -24px;
+  transform: skew(30deg, 0deg);
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 2px 5px,
+    inset rgba(255, 255, 255, 0.09) -1px 0;
+}
+
+.tabbed ul li:after {
+  left: -24px;
+  transform: skew(-30deg, 0deg);
+  box-shadow: rgba(0, 0, 0, 0.1) -3px 2px 5px,
+    inset rgba(255, 255, 255, 0.09) 1px 0;
+}
+
+.tabbed ul li:hover,
+.tabbed ul li:hover:before,
+.tabbed ul li:hover:after {
+  background-color: #f4f7f9;
+  color: #444;
+}
+
+.tabbed ul li.active {
+  z-index: 3;
+}
+
+.tabbed ul li.active,
+.tabbed ul li.active:before,
+.tabbed ul li.active:after {
+  background-color: #42f5f2;
+  color: #444;
+}
+
+#acc-display {
+  width: 100vw;
+  margin-left: calc(-23vw);
+  display: flex;
+  justify-content: flex-end;
+}
+
+#acc-name {
+  color: black;
+  font-weight: bolder;
+  background: rgb(238, 235, 235);
+  font-size: 15px;
+  border-right: black;
+  border-width: thick;
+}
+
+#acc-name,
+#logout-btn {
+  display: inline;
+}
+
+#secret-tab {
+  width: 100vw;
+  margin-left: calc(-27vw);
+  display: flex;
+  justify-content: flex-end;
+  transition: 0.5s ease;
+}
+
+#secret-tab:hover {
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+#secret-link {
+  display: inline;
+  color: black;
+  font-weight: bolder;
+  background: #42e6f5;
+  font-size: 15px;
+}
+
+#logout-btn {
+  width: 18px;
+  height: 18px;
+  background-image: url("../assets/home/logout.png");
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  border: thin;
+  border-radius: 0.5px;
+}
+
+#logout-btn:hover {
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+button:disabled {
+  background: #c2c2c2;
+  pointer-events: none;
+}
+
+.disabled {
+  pointer-events: none;
+}
+#sidebar_container2 {
+  float: right;
+  width: 224px;
+  border: solid 3px gray;
+  border-radius: 10px;
+  margin-top: 10px;
+  position:relative;
+  Top: 300px;
+  left:230px;
+  }

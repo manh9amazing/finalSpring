@@ -1,0 +1,66 @@
+<!--login.html-->
+<!--Purpose: Login page used for user input of their login information.-->
+<!--Version: addedHeaderComments  Date: 5/14/2021-->
+<!--Author(s): Andy Nguyen, Mike Nguyen -->
+<!--Dependencies: HTML5, CSS3, Javascript-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Title of page-->
+    <title>Efficient Money</title>
+
+    <!--Data about website description. Set default settings of html.-->
+    <meta name="description" content="a budget planning website" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+
+    <!-- FIREBASE IMPLEMENTATION WITHOUT USING SPA PATTERN - REMEMBER TO INCLUDE THESE LINES IN EVERY PAGE USING FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script> -->
+    <script src="../js/firebaseConfig.js"></script>
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+
+    <script src="../js/login.js"></script>
+    <!--Link to css and font family.-->
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,700|Prata"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--Div (container) of the main and title of the page. Also considered logo of our site.-->
+    <div id="main">
+      <!--Each section asks for the user's data in order to log on to the site the account.-->
+      <section class="login-container">
+        <form id = "login-form" class="login-form">
+          <div class="form-header">
+            <h3 id="form-header-h3">Efficient<span class="blue">Money</span></h3>
+          </div>
+          <div class="form-content">
+              <div class="input-wrapper">
+                <input type="email" name="email" placeholder="Email">
+                <div id = "email-error" class = "message-error">
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <input type="password" name="password" placeholder="Password">
+                <div id = "password-error" class = "message-error">
+                </div>
+                <div id = "login-error" class  = "message-error"> </div>
+              </div>
+          <div class="form-footer">
+            <a id = "login-link" href="#">Not yet have an account? Register</a>
+            <button id = "login-submit-btn" type="submit">Login</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>

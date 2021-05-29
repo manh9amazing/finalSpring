@@ -1,0 +1,206 @@
+<!--dataTab.html-->
+<!--Purpose: Page used to present data through different graphs and charts for the user.-->
+<!--Version: addedHeaderComments  Date: 5/14/2021-->
+<!--Author(s): Andy Nguyen, Mike Nguyen -->
+<!--Dependencies: HTML5, CSS3, Javascript-->
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Efficient Money</title>
+    <meta name="description" content="a budget planning website" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+
+    <!-- FIREBASE IMPLEMENTATION WITHOUT USING SPA PATTERN - REMEMBER TO INCLUDE THESE LINES IN EVERY PAGE USING FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script> -->
+    <script src="../js/firebaseConfig.js"></script>
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Prata" rel="stylesheet">
+
+    <!--Connection to about us javascript for functionality.-->
+    <script src="../js/accHandle.js"></script>
+    <script src="../js/exElement.js"></script>
+    <script src="../js/dataTab.js"></script>
+</head>
+
+<body>
+      <!--Div (container) of the main and title of the page. Also considered logo of our site.-->
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="acc-display">
+                    <div id="acc-name">
+                      <script>
+                          var name = localStorage.getItem("name");
+                          var accName = document.getElementById("acc-name");
+                          accName.innerHTML = "Hello, " + name + "&nbsp&nbsp";
+                      </script>
+                    </div>
+                    <button id="logout-btn"></button>      
+                </div>
+                <div id="secret-tab"></div>
+                <div id="logo_text">
+                    <h1><a href="index.html">Efficient<span class="logo_colour">Money</span></a></h1>
+                    <h2>Need help with finances? Let's get organized.</h2>
+                </div>
+            </div>
+            <div class="tabbed">
+                <ul>
+                    <!--Links to other pages in the from of list on click. When page is active, color change to indicate to user.-->
+                    <li onclick="window.location='./aboutUs.html'">About Us</li>
+                    <li onclick="window.location='./dataTab.html'" class="active">Data Tables</li>
+                    <li onclick="window.location='./calendar.html'">Calendar</li>
+                    <li onclick="window.location='./articles.html'">Articles</li>
+                    <li onclick="window.location='./budget.html'">Budget Planning</li>
+                    <li onclick="window.location='./index.html'">Home</li>
+                </ul>
+            </div>
+        </div>
+        <head>
+          <!--Javascript links to the google template charts.-->
+          <!--Javascript charts are not in separated javascript file due to usage of the google templates being within the html file.-->
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+              google.charts.load('current', {'packages':['table']});
+              google.charts.setOnLoadCallback(drawTable);
+        
+              //Function drawtable takes in the data in those types.
+              function drawTable() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Name');
+                data.addColumn('number', 'Salary');
+                data.addColumn('boolean', 'Full Time Employee');
+                data.addRows([
+                  ['Mike',  {v: 10000, f: '$10,000'}, true],
+                  ['Jim',   {v:8000,   f: '$8,000'},  false],
+                  ['Alice', {v: 12500, f: '$12,500'}, true],
+                  ['Bob',   {v: 7000,  f: '$7,000'},  true]
+                ]);
+        
+                //Set the element id for this specific table.
+                var table = new google.visualization.Table(document.getElementById('table_div1'));
+        
+                table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+              }
+            </script>
+          </head>
+          <!--Location of table 1 within HTML.-->
+          <body>
+            <div id="table_div1"></div>
+          </body>
+        </html>
+        
+                <html>
+          <head>
+            <!--Load the AJAX API-->
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+        
+              // Load the Visualization API and the corechart package.
+              google.charts.load('current', {'packages':['corechart']});
+        
+              // Set a callback to run when the Google Visualization API is loaded.
+              google.charts.setOnLoadCallback(drawChart);
+        
+              // Callback that creates and populates a data table,
+              // instantiates the pie chart, passes in the data and
+              // draws it.
+              function drawChart() {
+        
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                  ['Mushrooms', 3],
+                  ['Onions', 1],
+                  ['Olives', 1],
+                  ['Zucchini', 1],
+                  ['Pepperoni', 2]
+                ]);
+        
+                // Set chart options
+                var options = {'title':'How Much Pizza I Ate Last Night',
+                               'width':400,
+                               'height':300};
+        
+                // Instantiate and draw our chart, passing in some options.
+                var chart1 = new google.visualization.LineChart(document.getElementById('chart_div1'));
+                chart1.draw(data, options);
+              }
+            </script>
+          </head>
+        
+        
+          <body>
+            <!--Div that will hold the pie chart-->
+            <div id="chart_div1"></div>
+          </body>
+        </html>
+        
+        <html>
+            <head>
+              <!--Load the AJAX API-->
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+          
+                // Load the Visualization API and the corechart package.
+                google.charts.load('current', {'packages':['corechart']});
+          
+                // Set a callback to run when the Google Visualization API is loaded.
+                google.charts.setOnLoadCallback(drawChart);
+          
+                // Callback that creates and populates a data table,
+                // instantiates the pie chart, passes in the data and
+                // draws it.
+                function drawChart() {
+          
+                  // Create the data table.
+                  var data = new google.visualization.DataTable();
+                  data.addColumn('string', 'Topping');
+                  data.addColumn('number', 'Slices');
+                  data.addRows([
+                    ['Mushrooms', 3],
+                    ['Onions', 1],
+                    ['Olives', 1],
+                    ['Zucchini', 1],
+                    ['Pepperoni', 2]
+                  ]);
+          
+                  // Set chart options
+                  var options = {'title':'How Much Pizza I Ate Last Night',
+                                 'width':400,
+                                 'height':300};
+          
+                  // Instantiate and draw our chart, passing in some options.
+                  var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
+                  chart2.draw(data, options);
+                }
+              </script>
+            </head>
+          
+            <body>
+              <!--Div that will hold the pie chart-->
+              <div id="chart_div2"></div>
+            </body>
+          </html>
+        <div id="content_footer "></div>
+        <div id="footer">
+            <p><a href="index.html">Home</a> | <a href="budget.html">Budget Planning</a> | <a href="articles.html">Articles</a> | <a href="calendar.html">Calendar</a> | <a href="dataTab.html">Data Tables</a> | <a href="aboutUs.html">About Us</a></p>
+            <p>Drexel CI Lab Project</p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

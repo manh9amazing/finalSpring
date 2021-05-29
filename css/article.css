@@ -1,0 +1,71 @@
+/*aboutUs.css
+Purpose: Give stylistic aspects to specifically the article page. Make the article page more appealing.
+Version: addedHeaderComments  Date: 5/14/2021
+Author(s): Andy Nguyen, Mike Nguyen, Dat Nguyen 
+Dependencies: CSS3
+
+*/
+
+#banner {
+  background: transparent url(../assets/article/banner.png) no-repeat;
+  /* background-size: 50%; */
+  width: 760px;
+  height: 400px;
+  border: 10px solid #ddd;
+}
+
+.intro {
+  font-style: oblique;
+}
+
+#content {
+  margin-top: 12px;
+  /* padding: 10px; */
+}
+
+#imgshadow {
+  width: 780px;
+  border: 2px solid #b1dae7;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+#imgshadow:hover {
+  width: 800px;
+  margin-bottom: 50px;
+  margin-right: 30px;
+}
+
+.z {
+  width: 90%;
+  text-align: justify;
+  padding-left: 20px;
+}
+
+.a-link {
+  color: aqua;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  background-color: white;
+  color: black;
+}
+b,
+span {
+  cursor: pointer;
+}
+
+.smallImg {
+  width: 180px;
+  height: 150px;
+}

@@ -1,0 +1,101 @@
+<!--wishList.html-->
+<!--Purpose: helps users create their own wish list, supporting money management.-->
+<!--Version: wishListFinal  Date: 5/27/2021-->
+<!--Author(s): Dat Nguyen, Mike Nguyen-->
+<!--Dependencies: HTML5, CSS3, Javascript-->
+
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Efficient Money</title>
+    <meta name="description" content="a budget planning website" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+
+    <!-- FIREBASE IMPLEMENTATION WITHOUT USING SPA PATTERN - REMEMBER TO INCLUDE THESE LINES IN EVERY PAGE USING FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script> -->
+    <script src="../js/firebaseConfig.js"></script>
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!--Link to css and css font family.-->
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/wishList.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Prata" rel="stylesheet">
+
+    <!--Connection to about us javascript for functionality.-->
+    <script src="../js/accHandle.js"></script>
+    <script src="../js/exElement.js"></script>
+    <script src="../js/wishList.js" defer></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="acc-display">
+                    <div id="acc-name">
+                        <script>
+                            var name = localStorage.getItem("name");
+                            var accName = document.getElementById("acc-name");
+                            accName.innerHTML = "Hello, " + name + "&nbsp&nbsp";
+                        </script>
+                    </div>
+                    <button id="logout-btn"></button>      
+                </div>
+                <div id="secret-tab"></div>
+                <div id="logo_text">
+                    <h1><a href="index.html">Efficient<span class="logo_colour">Money</span></a></h1>
+                    <h2>Need help with finances? Let's get organized.</h2>
+                </div>
+            </div>
+            <div class="tabbed">
+                <ul>
+                    <li onclick="window.location='./aboutUs.html'">About Us</li>
+                    <li onclick="window.location='./wishList.html'" class="active">Wish List</li>
+                    <li onclick="window.location='./calendar.html'">Calendar</li>
+                    <li onclick="window.location='./articles.html'">Articles</li>
+                    <li onclick="window.location='./budget.html'">Budget Planning</li>
+                    <li onclick="window.location='./index.html'">Home</li>
+                </ul>
+            </div>
+        </div>
+        <h1>Your Wish List <span class="red hide" id="title-warning">In Danger</span></h1>
+        <div id="caption-warning" class="hide">You have exceeded your income. Please consider to remove items from the wish list!</div>
+        <div id="site-body">
+            <div class = "middle" >
+                <form id="wish-list-form">
+                    <input type = "text" name ="item" placeholder="Item's name">
+                    <input type = "text" name ="quantity" placeholder="Quantity">
+                    <input type = "text" name ="where" placeholder="Where to buy">
+                    <input type = "text" name ="price" placeholder="Price (Without $ Sign)">
+                    <button class = "add-btn">Add Item</button>
+                </form>
+                <table style = "width: 100%">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Where to buy</th>
+                        <th>Price Rounded Down</th>
+                    </tr>
+                </table>
+                <ul id="item-list"></ul>
+            </div>
+        </div>
+        <div id="content_footer "></div>
+        <div id="footer">
+            <p><a href="index.html">Home</a> | <a href="budget.html">Budget Planning</a> | <a href="articles.html">Articles</a> | <a href="calendar.html">Calendar</a> | <a href="wishList.html">Wish List</a> | <a href="aboutUs.html">About Us</a></p>
+            <p>Drexel CI Lab Project</p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

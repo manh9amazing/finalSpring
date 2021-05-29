@@ -1,0 +1,150 @@
+/*login.css
+Purpose: Give overall interface appearance and style.
+Version: addedHeaderComments  Date: 5/14/2021
+Author(s): Mike Nguyen, Andy Nguyen, Datdo Nguyen, Dat Nguyen
+Dependencies: CSS3
+
+*/
+
+#inputInterface {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#inputInterface {
+  height: auto;
+  min-width: 100vh;
+  background: rgb(104, 150, 177);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#inputInterface h1 {
+  margin-top: 100px;
+}
+
+#inputInterface h2 {
+  color: azure;
+}
+
+#inputInterface form {
+  margin-top: 50px;
+  box-shadow: -3px 6px 4px #222;
+}
+.txt {
+  width: 350px;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 0 5px;
+}
+.num {
+  width: 100px;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 0 5px;
+}
+#income {
+  width: 300px;
+  height: 40px;
+  border: none;
+  outline: none;
+  box-shadow: -3px 6px 4px #222;
+}
+#save {
+  margin-top: 50px;
+  width: 200px;
+  height: 60px;
+  border: none;
+  background: yellowgreen;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+#inputInterface form button {
+  width: 50px;
+  height: 40px;
+  border: none;
+  background: yellowgreen;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+#inputInterface ul {
+  list-style: none;
+  width: 500px;
+}
+
+#inputInterface ul li {
+  width: 100%;
+  background: #fff;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 5px;
+  position: relative;
+  cursor: pointer;
+  display: block;
+  margin: 5px 0;
+  box-shadow: -3px 6px 4px #222;
+  transition: 0.8s linear;
+}
+#inputInterface ul li span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  text-align: center;
+  background: goldenrod;
+}
+
+#styleBtnContainer {
+  position: relative;
+}
+
+#norm,
+#prog {
+  display: inline-block;
+}
+
+#norm {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background: green;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+#prog {
+  width: 150px;
+  height: 50px;
+  border: none;
+  background: darkred;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  opacity: 30%;
+}
+
+button:not(#prog, #norm):hover {
+  opacity: 80%;
+}
+
+span:hover {
+  opacity: 80%;
+}
+
+#graphs {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.graph {
+  margin: 10px;
+}
+
+/* TODO: more improved design maybe */

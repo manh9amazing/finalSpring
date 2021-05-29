@@ -1,0 +1,62 @@
+Creators:
+Andy Nguyen
+Mike Nguyen
+Dat Thanh Do
+Dat Nguyen
+
+Minimum Hardware and software requirements:
+working browser
+Coding editor
+Working OS that can run these applications (Windows / Linux / IOS)
+
+Just for running the site:
+Working internet connection
+Working browser
+
+Installation guide
+
+For using the site as in a user perspective:
+Go to https://manh9amazing.github.io/mvpWinter/html/index.html on any web browser to view the site.
+
+For setting up as coder:
+
+Download any coding editor (Visual Studio Code)
+Create a new empty folder inside of the coding editor
+In the command Line use Git clone with the HTTPS clone URL on the gitLab page for Personal Finance
+git clone https://gitlab.cci.drexel.edu/fds21/67factgenerator/personal-finance-budget-manager.git
+Change the directory to the clone folder
+Start a new branch on your terminal
+
+Testing:
+
+Can be done using coding editor running the git clone
+Running the website on any browser
+
+Deploying:
+
+Deploy through github - creating a website and importing all of the files on into
+
+Changing codebase:
+
+Work on new code in private coding editor
+Use Git add . (Preferably you should use Git Status first to see your terminal's status)
+Do Git Commit -m "Comment" with a message for new code
+Then do Git push origin (branch name)
+
+
+explanations of error messages and troubleshooting:
+The code for the website does work as intended.
+
+If first opening the site and seeing doubling tabs, it is because of site is not static and so it shifts every movable div together.
+
+Each category in the budget page goes from their own numbered list from 1 being most important to least important.
+
+Contacting developers of the system:
+
+There's a form on the personal finance website that has user feedback. Write to us there and we will receive your message. This is primarially for the website.
+
+We didn't code the software applications such as chrome web browser. For those respective web browsers and OS systems, contact specifically the application being used.
+
+For example, to contract google chrome: go to https://support.google.com/chrome/?hl=en#topic=9796470
+
+
